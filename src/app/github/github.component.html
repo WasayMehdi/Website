@@ -1,0 +1,24 @@
+Github page is in progress as of 9/10/18, in the time being feel free to check out my personal githubs:<br>
+<a href="https://github.com/WasayMehdi?tab=repositories">First</a><br>
+<a href="https://github.com/SyedMehdi2?tab=repositories">Second</a><br>
+<br>
+<mat-accordion [multi]="true">
+  <div *ngFor="let g of githubPages">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header class="expansionHeader" [expandedHeight]="'50px'">
+        <mat-panel-title class="expansionHeaderText">
+          {{g.name}}&nbsp;
+          <a href="{{g.link}}" (click)="$event.stopPropagation()"><mat-icon matTooltip="Go to repository">exit_to_app</mat-icon></a>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <br>
+
+      <strong>Overview</strong>
+      <ul>
+        <li *ngFor="let s of g.descr">
+          {{s}}
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>

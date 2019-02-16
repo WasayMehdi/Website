@@ -1,0 +1,76 @@
+
+
+  <table width="100%">
+    <tr>
+      <td width="20%" style="vertical-align: top;" align="center" class="myImageClass">
+        <app-profile></app-profile>
+
+      </td>
+
+      <td style="vertical-align: top">
+
+        <mat-accordion [multi]="true">
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header class="expansionHeader" [expandedHeight]="'50px'">
+              <mat-panel-title class="expansionHeaderText">
+                Website Overview
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <br>
+            This is a website designed in Angular 6 using Material Design design principles and UI. The front-end is hosted on an S3 bucket
+            and the backend will be hosted on an EC2 instance.
+            <br>
+            <br>
+            This website serves as an expansion to my resume, with links and descriptors to my other projects and interests without
+            taking up real estate on my resume. It also serves as a playground for me to experiment with the latest technologies with a more
+            practical purpose.
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header class="expansionHeader" [expandedHeight]="'50px'">
+              <mat-panel-title class="expansionHeaderText">
+                Links
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <br>
+            <div style="font-size: 12pt;">
+              <img class="imgIcon" src="../../assets/GitHub-Mark-32px.png">&nbsp;
+              <a routerLink="/github">Github</a><br>
+              <img class="imgIcon" src="../../assets/if_linkedin_circle_color_107178.png">&nbsp;
+              <a href="https://www.linkedin.com/in/wasay-mehdi-981728168/"> LinkedIn</a><br>
+              <a href="../../assets/Resume_9_10_2018.pdf" download>Resume (pdf)</a>
+            </div>
+
+
+          </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="true">
+              <mat-expansion-panel-header class="expansionHeader" [expandedHeight]="'50px'">
+                <mat-panel-title class="expansionHeaderText">
+                  Contact Me
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <br>
+              Send me an email
+              <br>
+              <br>
+              <mat-form-field class="full-width">
+                <input #inpt matInput placeholder="Subject">
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <textarea #txt matInput placeholder="Content" matTextareaAutosize [matAutosizeMinRows]="6"></textarea>
+              </mat-form-field>
+
+              <span *ngIf="sendSuccess" style="color: green;">Email Sent!</span>
+              <div style="text-align: right;">
+                <button (click)="sendEmail(txt, inpt)" mat-raised-button class="expansionHeader expansionHeaderText">Send</button>
+
+              </div>
+
+            </mat-expansion-panel>
+
+        </mat-accordion>
+      </td>
+    </tr>
+  </table>

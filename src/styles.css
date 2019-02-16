@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.expansionHeader {
+  background: dodgerblue !important;
+  font-weight: bold;
+}
+
+.expansionHeader:hover {
+  background: darkcyan !important;
+}
+
+.expansionHeaderText {
+  color: white;
+}
+
+::ng-deep .expansionHeader > .mat-expansion-indicator:after {
+  color: white;
+}
